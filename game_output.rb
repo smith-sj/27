@@ -15,13 +15,13 @@ class GameOutput
         puts "  3  " + printed_rows[2].join
         puts "\n"
 
-        puts "#{player_x}(x): #{x_tally}  |  #{player_o}(o): #{o_tally}"
+        puts "  #{player_x}(x): #{x_tally}  |  #{player_o}(o): #{o_tally}"
     end
 
     # Prompts
 
     def prompt_move (player)
-        puts "\n#{player}, where would you like to go?\n"
+        puts "  \n#{player}, where would you like to go?\n"
     end
 
     # Line break

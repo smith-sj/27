@@ -5,6 +5,7 @@ require_relative "game_input"
 require_relative "turn_master"
 require_relative "game_board"
 require_relative "adjudicator"
+require_relative "ai"
 
 # Players
 CROSS = "x"
@@ -101,34 +102,148 @@ def play_turn(player_x, player_o, player_name, token, board1_squares)
     end
 end
 
-# -----MAIN LOOP-----
-system("cls") || system("clear")
-puts "Player x, enter name: "
-player_x = gets.strip
-puts "Player o, enter name: "
-player_o = gets.strip
+def play_ai_turn(player_x, player_o, player_name, token, board1_squares)
 
-turn_count = -1
-
-while true
-    turn_count += 1
-    player_name = TurnMaster.new.whos_turn(turn_count, player_x, player_o)
-    token = player_name == "#{player_x}" ? CROSS : NOUGHT
-
-    play_turn(player_x, player_o, player_name, token, board1_squares)
-    if turn_count >= 26
-        x_tally = Adjudicator.new.tally_up(board1_squares)[:x_tally]
-        o_tally = Adjudicator.new.tally_up(board1_squares)[:o_tally]
-        GameOutput.new.print_game(player_x, player_o, board1_squares, x_tally, o_tally)
-        x_final_tally = Adjudicator.new.tally_up(board1_squares)[:x_tally].to_i
-        o_final_tally = Adjudicator.new.tally_up(board1_squares)[:o_tally].to_i
-        if x_final_tally > o_final_tally
-            puts "Game over! #{player_x} wins!"
-        elsif x_final_tally < o_final_tally
-            puts "Game over! #{player_o} wins!"
-        else
-            puts "\nGame over! It's a draw."
+    x_tally = Adjudicator.new.tally_up(board1_squares)[:x_tally]
+    o_tally = Adjudicator.new.tally_up(board1_squares)[:o_tally]
+    # Print current game
+    GameOutput.new.print_game(player_x, player_o, board1_squares, x_tally, o_tally)
+    sleep rand(3..6)
+     # Check move is valid and unique
+     while true
+        # puts "prompting player"
+        move = Ai.new.get_move
+        # puts "move is currently #{move}"
+        if GameValidator.new.is_valid(move) && GameValidator.new.is_unique(move, board1_squares, GAME_KEY)
+            # puts "move is valid and unique"
+            add_move(token, move, board1_squares, GAME_KEY)
+            # puts "added move"
+            GameOutput.new.print_game(player_x, player_o, board1_squares, x_tally, o_tally)
+            break
+        elsif !GameValidator.new.is_valid(move)
+            # puts "move is invalid"
+            GameOutput.new.print_game(player_x, player_o, board1_squares, x_tally, o_tally)
+            puts "\nInvalid Move! Try again.\n"
+        elsif !GameValidator.new.is_unique(move, board1_squares, GAME_KEY)
+            # puts "stacking move on next board"
+            move[0..0]= ((move[0]).to_i + 3).to_s
+            # puts "new move is: #{move}"
+            if GameValidator.new.is_valid(move) && GameValidator.new.is_unique(move, board1_squares, GAME_KEY)
+                # puts "move is valid and unique"
+                add_move(token, move, board1_squares, GAME_KEY)
+                # puts "added move"
+                GameOutput.new.print_game(player_x, player_o, board1_squares, x_tally, o_tally)
+                break
+            elsif !GameValidator.new.is_valid(move)
+                # puts "move is invalid"
+                GameOutput.new.print_game(player_x, player_o, board1_squares, x_tally, o_tally)
+                puts "\nInvalid Move! Try again.\n"
+            elsif !GameValidator.new.is_unique(move, board1_squares, GAME_KEY)
+                # puts "stacking move on next board"
+                move[0..0]= ((move[0]).to_i + 3).to_s
+                # puts "new move is: #{move}"
+                if GameValidator.new.is_valid(move) && GameValidator.new.is_unique(move, board1_squares, GAME_KEY)
+                    # puts "move is valid and unique"
+                    add_move(token, move, board1_squares, GAME_KEY)
+                    # puts "added move"
+                    GameOutput.new.print_game(player_x, player_o, board1_squares, x_tally, o_tally)
+                    break
+                elsif !GameValidator.new.is_valid(move)
+                    # puts "move is invalid"
+                    GameOutput.new.print_game(player_x, player_o, board1_squares, x_tally, o_tally)
+                    puts "\nInvalid Move! Try again.\n"
+                elsif !GameValidator.new.is_unique(move, board1_squares, GAME_KEY)
+                    GameOutput.new.print_game(player_x, player_o, board1_squares, x_tally, o_tally)
+                    puts "Stack is full! Try again.\n"
+                end
+            end
         end
-        break
     end
+end
+
+# -----MAIN LOOP-----
+
+system("cls") || system("clear")
+puts "1. PvP (press 1 ENTER) || 2. PvAI (press 2 ENTER)\n\n"
+game_mode =  gets.strip
+
+if game_mode == "1"
+    puts "\n\n  Player x, enter name: "
+    player_x = gets.strip
+    puts "\n\n  Player o, enter name: "
+    player_o = gets.strip
+
+    turn_count = -1
+
+    while true
+        turn_count += 1
+        player_name = TurnMaster.new.whos_turn(turn_count, player_x, player_o)
+        token = player_name == "#{player_x}" ? CROSS : NOUGHT
+    
+        play_turn(player_x, player_o, player_name, token, board1_squares)
+        if turn_count >= 26
+            x_tally = Adjudicator.new.tally_up(board1_squares)[:x_tally]
+            o_tally = Adjudicator.new.tally_up(board1_squares)[:o_tally]
+            GameOutput.new.print_game(player_x, player_o, board1_squares, x_tally, o_tally)
+            x_final_tally = Adjudicator.new.tally_up(board1_squares)[:x_tally].to_i
+            o_final_tally = Adjudicator.new.tally_up(board1_squares)[:o_tally].to_i
+            if x_final_tally > o_final_tally
+                puts "Game over! #{player_x} wins!"
+            elsif x_final_tally < o_final_tally
+                puts "Game over! #{player_o} wins!"
+            else
+                puts "\nGame over! It's a draw."
+            end
+            break
+        end
+    end
+
+else
+    puts "\n\n  Player x, enter name: "
+    player_x = gets.strip
+    player_o = "AI"
+
+    turn_count = -1
+
+    while true
+        turn_count += 1
+        player_name = TurnMaster.new.whos_turn(turn_count, player_x, player_o)
+        token = player_name == "#{player_x}" ? CROSS : NOUGHT
+        if player_name == "AI"
+            play_ai_turn(player_x, player_o, player_name, token, board1_squares)
+            if turn_count >= 26
+                x_tally = Adjudicator.new.tally_up(board1_squares)[:x_tally]
+                o_tally = Adjudicator.new.tally_up(board1_squares)[:o_tally]
+                GameOutput.new.print_game(player_x, player_o, board1_squares, x_tally, o_tally)
+                x_final_tally = Adjudicator.new.tally_up(board1_squares)[:x_tally].to_i
+                o_final_tally = Adjudicator.new.tally_up(board1_squares)[:o_tally].to_i
+                if x_final_tally > o_final_tally
+                    puts "Game over! #{player_x} wins!"
+                elsif x_final_tally < o_final_tally
+                    puts "Game over! #{player_o} wins!"
+                else
+                    puts "\nGame over! It's a draw."
+                end
+                break
+            end
+        else
+            play_turn(player_x, player_o, player_name, token, board1_squares)
+            if turn_count >= 26
+                x_tally = Adjudicator.new.tally_up(board1_squares)[:x_tally]
+                o_tally = Adjudicator.new.tally_up(board1_squares)[:o_tally]
+                GameOutput.new.print_game(player_x, player_o, board1_squares, x_tally, o_tally)
+                x_final_tally = Adjudicator.new.tally_up(board1_squares)[:x_tally].to_i
+                o_final_tally = Adjudicator.new.tally_up(board1_squares)[:o_tally].to_i
+                if x_final_tally > o_final_tally
+                    puts "Game over! #{player_x} wins!"
+                elsif x_final_tally < o_final_tally
+                    puts "Game over! #{player_o} wins!"
+                else
+                    puts "\nGame over! It's a draw."
+                end
+                break
+            end
+        end
+    end
+
 end
