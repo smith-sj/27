@@ -9,12 +9,10 @@ class Adjudicator
     # tally up tallys
     def tally_up(current_game)
 
-        combo_key = ["xxx","ooo"]
-
         flats_points = 3
         pillars_points = 2
         stairs_points = 2
-        diamond_stairs_points = 2
+        diamond_stairs_points = 1
 
 
         flats = [
@@ -78,7 +76,7 @@ class Adjudicator
             (current_game[0][2][2] + current_game[1][1][1] + current_game[2][0][0]),
             (current_game[0][0][2] + current_game[1][1][1] + current_game[2][2][0]),]
 
-
+        combo_key = ["xxx","ooo"]
 
         flats.each do |combo|
             if combo == combo_key[0]

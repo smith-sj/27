@@ -1,4 +1,9 @@
 class Ai
+
+    def name
+        names = ['Bob', 'Jenny', 'HorseyChick93', 'SpicyKing22', 'Albert', 'ThePun!sh3r', 'Kyle', 'PJ', 'David', 'Samantha']
+        return names[rand(names.length)]
+    end
     
     def get_move
         letters = ["a","b","c"]

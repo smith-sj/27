@@ -95,7 +95,7 @@ def play_turn(player_x, player_o, player_name, token, board1_squares)
                     puts "\nInvalid Move! Try again.\n"
                 elsif !GameValidator.new.is_unique(move, board1_squares, GAME_KEY)
                     GameOutput.new.print_game(player_x, player_o, board1_squares, x_tally, o_tally)
-                    puts "Stack is full! Try again.\n"
+                    puts "\nStack is full! Try again.\n"
                 end
             end
         end
@@ -108,6 +108,7 @@ def play_ai_turn(player_x, player_o, player_name, token, board1_squares)
     o_tally = Adjudicator.new.tally_up(board1_squares)[:o_tally]
     # Print current game
     GameOutput.new.print_game(player_x, player_o, board1_squares, x_tally, o_tally)
+    puts "\nWaiting for #{player_name}..."
     sleep rand(3..6)
      # Check move is valid and unique
      while true
@@ -154,7 +155,7 @@ def play_ai_turn(player_x, player_o, player_name, token, board1_squares)
                     puts "\nInvalid Move! Try again.\n"
                 elsif !GameValidator.new.is_unique(move, board1_squares, GAME_KEY)
                     GameOutput.new.print_game(player_x, player_o, board1_squares, x_tally, o_tally)
-                    puts "Stack is full! Try again.\n"
+                    puts "\nStack is full! Try again.\n"
                 end
             end
         end
@@ -166,12 +167,15 @@ end
 system("cls") || system("clear")
 puts "1. PvP (press 1 ENTER) || 2. PvAI (press 2 ENTER)\n\n"
 game_mode =  gets.strip
+system("cls") || system("clear")
 
 if game_mode == "1"
-    puts "\n\n  Player x, enter name: "
+    puts "Player x, enter name: \n\n"
     player_x = gets.strip
-    puts "\n\n  Player o, enter name: "
+    system("cls") || system("clear")
+    puts "Player o, enter name: \n\n"
     player_o = gets.strip
+    system("cls") || system("clear")
 
     turn_count = -1
 
@@ -188,9 +192,9 @@ if game_mode == "1"
             x_final_tally = Adjudicator.new.tally_up(board1_squares)[:x_tally].to_i
             o_final_tally = Adjudicator.new.tally_up(board1_squares)[:o_tally].to_i
             if x_final_tally > o_final_tally
-                puts "Game over! #{player_x} wins!"
+                puts "\nGame over! #{player_x} wins!"
             elsif x_final_tally < o_final_tally
-                puts "Game over! #{player_o} wins!"
+                puts "\nGame over! #{player_o} wins!"
             else
                 puts "\nGame over! It's a draw."
             end
@@ -199,9 +203,9 @@ if game_mode == "1"
     end
 
 else
-    puts "\n\n  Player x, enter name: "
+    puts "Player x, enter name: \n\n"
     player_x = gets.strip
-    player_o = "AI"
+    player_o = Ai.new.name
 
     turn_count = -1
 
@@ -209,7 +213,7 @@ else
         turn_count += 1
         player_name = TurnMaster.new.whos_turn(turn_count, player_x, player_o)
         token = player_name == "#{player_x}" ? CROSS : NOUGHT
-        if player_name == "AI"
+        if player_name == player_o
             play_ai_turn(player_x, player_o, player_name, token, board1_squares)
             if turn_count >= 26
                 x_tally = Adjudicator.new.tally_up(board1_squares)[:x_tally]
@@ -218,9 +222,9 @@ else
                 x_final_tally = Adjudicator.new.tally_up(board1_squares)[:x_tally].to_i
                 o_final_tally = Adjudicator.new.tally_up(board1_squares)[:o_tally].to_i
                 if x_final_tally > o_final_tally
-                    puts "Game over! #{player_x} wins!"
+                    puts "\nGame over! #{player_x} wins!"
                 elsif x_final_tally < o_final_tally
-                    puts "Game over! #{player_o} wins!"
+                    puts "\nGame over! #{player_o} wins!"
                 else
                     puts "\nGame over! It's a draw."
                 end
@@ -235,9 +239,9 @@ else
                 x_final_tally = Adjudicator.new.tally_up(board1_squares)[:x_tally].to_i
                 o_final_tally = Adjudicator.new.tally_up(board1_squares)[:o_tally].to_i
                 if x_final_tally > o_final_tally
-                    puts "Game over! #{player_x} wins!"
+                    puts "\nGame over! #{player_x} wins!"
                 elsif x_final_tally < o_final_tally
-                    puts "Game over! #{player_o} wins!"
+                    puts "\nGame over! #{player_o} wins!"
                 else
                     puts "\nGame over! It's a draw."
                 end
