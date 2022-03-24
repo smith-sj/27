@@ -29,60 +29,32 @@ single-plane combos = 3 points
 
 Examples:
 
-3 x's are stacked on top of each other; this is called 
-a "pillar" and is awarded 2 points. 
-```
-|x| | |     |x| | |    |x| | |
-| | | |     | | | |    | | | |
-| | | |     | | | |    | | | | = 2 points
-```
 3 o's are placed in a flat row; this is called
 a "flat" and is awarded 3 points.
-```
-|o| | |     | | | |    | | | |
-|o| | |     | | | |    | | | |
-|o| | |     | | | |    | | | | = 3 points
-```
 
-3 x's are stacked from left to right and bottom to top; 
-this is called "stairs" and is awarded 2 points. 
 ```
-|x|o|o|     | |x|o|    | | |x|
 | | | |     | | | |    | | | |
-| | | |     | | | |    | | | | = 2 points
-```
-3 o's are stacked diagonally from one corner to the opposite
-and from bottom to top. This is called "diamond stairs"
-and is awarded 2 points.
- ```
-|o| | |     |x| | |    |x| | |
-| |x| |     | |o| |    | |x| |
-| | |x|     | | |x|    | | |o| = 2 points
-```
-THIS IS AN ILLEGAL MOVE AS THE CROSSES ON BOARD 2 AND 3 CAN
-NOT BE STACKED ON TOP OF EMPTY SQUARES.
-```
-|x| | |    | |x| |    | | |x|
-| | | |    | | | |    | | | |
-| | | |    | | | |    | | | |
-```
-The game is played best when each player tally's their own score as they make
-combos. A good house rule is that if you fail to notice a combo before your
-next turn, then you miss out on the points. Either way, tallying up points
-at the end of the game is not recommended.```
+| | | |     | | | |    | | | |
+|o|o|o|     | | | |    | | | | = 3 points
 
-FLATS (3 points)
-```
    __ _ _
-  /x/_/_/\
- /_/x/_/\/\
-/_/_/x/\/\/\
+  /_/_/_/\
+ /_/_/_/\/\
+/_/_/_/\/\/\
 \_\_\_\/\/\/
  \_\_\_\/\/
-  \_\_\_\/
-  ```
-PILLARS (2 points)
+  \o\o\o\/
+
 ```
+
+
+3 x's are stacked on top of each other; this is called 
+a "pillar" and is awarded 2 points.
+
+```
+| | | |     | | | |    | | | |
+| | | |     | | | |    | | | |
+| | |x|     | | |x|    | | |x| = 2 points
    __ _ _
   /_/_/_/\
  /_/_/_/\/\
@@ -90,19 +62,33 @@ PILLARS (2 points)
 \_\_\x\/\/\/
  \_\_\x\/\/
   \_\_\x\/
+
 ```
-STAIRS (2 points)
-```             
+
+3 x's are stacked from left to right and bottom to top; 
+this is called "stairs" and is awarded 2 points. 
+
+```
+| | | |     | | | |    | | | |
+| | | |     | | | |    | | | |
+|x| | |     |o|x| |    |o|o|x| = 2 points             
    __ _ _
   /_/_/_/\
  /_/_/_/\/\
 /_/_/_/\/\/\
 \x\_\_\/\/\/
- \_\x\_\/\/
-  \_\_\x\/
+ \o\x\_\/\/
+  \o\o\x\/
+
 ```
-DIAMOND STAIRS
+3 o's are stacked diagonally from one corner to the opposite
+and from bottom to top. This is called "diamond stairs"
+and is awarded 2 points.
+
  ```
+|o| | |     |o| | |    |x| | |
+| |o| |     | |x| |    | | | |
+| | |x|     | | | |    | | | | = 2 points
    __ 
   /x/\ _ _
   \_\/_/_/\
@@ -112,3 +98,20 @@ DIAMOND STAIRS
   \_\_\_\/
 
 ```
+
+
+THIS IS AN ILLEGAL MOVE AS THE CROSSES ON BOARD 2 AND 3 CAN
+NOT BE STACKED ON TOP OF EMPTY SQUARES.
+```
+|x| | |    | |x| |    | | |x|
+| | | |    | | | |    | | | |
+| | | |    | | | |    | | | |
+```
+
+When playing on pen and paper, it's best practice to tally your own score
+as you go. 
+
+A good house rule is that if you fail to notice a combo before your next turn, 
+then you miss out on the points. Either way, tallying up points at the end of 
+the game is an arduous task, and not recommended.
+
