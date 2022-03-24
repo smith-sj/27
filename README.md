@@ -1,33 +1,49 @@
-# Twent-Sevens        
+# Twenty-Seven
 
-To play, imagine a game of Naughts & Crosses in a 3d space.
-The 3d space is represented with 3 game boards, the left most
-board (board 1) representing the bottom plane, and the right
-most board (board 3) representing the top plane. Board 2
-represents the middle plane.
+## About
+
+Twenty-seven was created with the goal of making a fun and challenging game that could be played on ink & paper,
+but also played online as a simple free game. It's quite similar to other 3D variations of Naughts & Crosses, with
+the unique characteristic of being points-based, making for longer and more complex gameplay.
+
+## How to play
+
+The aim of Twenty-Seven is to earn points by making combinations of Flats, Pillars and Stairs. When all twenty-seven
+squares are full, the player with the most points is the winner.
+
+To play, imagine a game similar to Naughts & Crosses but in a 3D space, represented by three game boards.
+The top-most board, Board 3, represents the highest plane; and the bottom-most board, Board 1, represents the lowest plane.
+Board 2 represents the middle plane.
+
 ```
-board 1    board 2    board 3
+board 3
 
-| | | |    | | | |    | | | |
-| | | |    | | | |    | | | |
-| | | |    | | | |    | | | |
+| | | |
+| | | |
+| | | |
+
+board 2
+
+| | | |
+| | | |
+| | | |
+
+board 1
+
+| | | |
+| | | |
+| | | |
 ```
-Combos of 3 can be made between planes or on a single plane; however,
-you may only play on board 2 and 3, if the corresponding square
-has been filled on the previous board. (Imagine pieces are being 
-stacked.)
+Players take turns placing their respective tokens on the board, attempting to make combinations of 3, both on a single plane and across 
+multiple planes. Players may only place tokens on higher planes if the same square is occupied on the lower plane.
+(Imagine the tokens are being stacked.)
 
-Unlike Naughts & Crosses, the game does not end when a combo is
-made. Instead, the player is awarded points for the combo
-and the game continues until every square has been filled or
-one of the players forfeits.
+Unlike Naughts & Crosses, the game does not end when a single combintation is made. Instead, the player is awarded points for the combination
+and the game continues until every square has been filled or one of the players forfeits.
 
-Points are awarded as such: 
+## Combinations & Points
 
-cross-plane combos  = 2 points
-single-plane combos = 3 points
-
-Examples:
+### FLATS
 
 3 o's are placed in a flat row; this is called
 a "flat" and is awarded 3 points.
@@ -47,6 +63,7 @@ a "flat" and is awarded 3 points.
 
 ```
 
+### PILLARS
 
 3 x's are stacked on top of each other; this is called 
 a "pillar" and is awarded 2 points.
@@ -65,6 +82,8 @@ a "pillar" and is awarded 2 points.
 
 ```
 
+### STAIRS
+
 3 x's are stacked from left to right and bottom to top; 
 this is called "stairs" and is awarded 2 points. 
 
@@ -81,14 +100,17 @@ this is called "stairs" and is awarded 2 points.
   \o\o\x\/
 
 ```
+
+### DIAMOND STAIRS
+
 3 o's are stacked diagonally from one corner to the opposite
 and from bottom to top. This is called "diamond stairs"
-and is awarded 2 points.
+and is awarded 1 point.
 
  ```
 |o| | |     |o| | |    |x| | |
 | |o| |     | |x| |    | | | |
-| | |x|     | | | |    | | | | = 2 points
+| | |x|     | | | |    | | | | = 1 point
    __ 
   /x/\ _ _
   \_\/_/_/\
@@ -99,9 +121,8 @@ and is awarded 2 points.
 
 ```
 
+This is an illegal move. Notice that the x's are not stacked on anything.
 
-THIS IS AN ILLEGAL MOVE AS THE CROSSES ON BOARD 2 AND 3 CAN
-NOT BE STACKED ON TOP OF EMPTY SQUARES.
 ```
 |x| | |    | |x| |    | | |x|
 | | | |    | | | |    | | | |
@@ -111,7 +132,7 @@ NOT BE STACKED ON TOP OF EMPTY SQUARES.
 When playing on pen and paper, it's best practice to tally your own score
 as you go. 
 
-A good house rule is that if you fail to notice a combo before your next turn, 
+A good house rule is that if you fail to notice a combination before your next turn, 
 then you miss out on the points. Either way, tallying up points at the end of 
 the game is an arduous task, and not recommended.
 
