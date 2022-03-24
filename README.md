@@ -1,4 +1,4 @@
-        # Twent-Sevens        
+# Twent-Sevens        
 
 
 	To play, imagine a game of Noughts & Crosses in a 3d space.
@@ -6,11 +6,11 @@
 	board (board 1) representing the bottom level, and the right
 	most board (board 3)representing the top level.
 	
-	board 1	board 2	board 3
+	board 1    board 2    board 3
 	
-	| | | |	| | | |	| | | |
-	| | | |	| | | |	| | | |
-	| | | |	| | | |	| | | |
+	| | | |    | | | |    | | | |
+	| | | |    | | | |    | | | |
+	| | | |    | | | |    | | | |
 	
 	Combos of 3 can be made between levels or on a single level,
 	but you may only play on board 2 or 3, if the corresponding square
@@ -50,7 +50,7 @@
 	| | | |     | | | |    | | | |
 	| | | |     | | | |    | | | |
 	
-	3 x's are stacked diagonally from bottom left to top
+		3 x's are stacked diagonally from bottom left to top
 	right; this is considered a "multi-level combo" and 
 	is awarded 2 points. 
 
