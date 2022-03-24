@@ -70,5 +70,42 @@ The game is played best when each player tally's their own score as they make
 combos. A good house rule is that if you fail to notice a combo before your
 next turn, then you miss out on the points. Either way, tallying up points
 at the end of the game is not recommended.```
-	
+
+FLATS (3 points)
+   __ _ _
+  /x/_/_/\
+ /_/x/_/\/\
+/_/_/x/\/\/\
+\_\_\_\/\/\/
+ \_\_\_\/\/
+  \_\_\_\/
+  
+PILLARS (2 points)
+   __ _ _
+  /_/_/_/\
+ /_/_/_/\/\
+/_/_/_/\/\/\
+\_\_\x\/\/\/
+ \_\_\x\/\/
+  \_\_\x\/
+  
+STAIRS (2 points)             
+   __ _ _
+  /_/_/_/\
+ /_/_/_/\/\
+/_/_/_/\/\/\
+\x\_\_\/\/\/
+ \_\x\_\/\/
+  \_\_\x\/
+
+DIAMOND STAIRS
+  
+   __ 
+  /x/\ _ _
+  \_\/_/_/\
+  /_/x/_/\/\
+ /_/\_\_\/\/
+ \_\/_/x/\/
+  \_\_\_\/
+
 
