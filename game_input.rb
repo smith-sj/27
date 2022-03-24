@@ -9,7 +9,7 @@ class GameInput
     def get_move(token)
         # puts "getting move"
         move = gets.strip
-        puts "move reaaranged to #{reorder_move(move)}"
+        # puts "move reaaranged to #{reorder_move(move)}"
         return reorder_move(move)
     end
     

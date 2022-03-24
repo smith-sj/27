@@ -32,72 +32,69 @@ GAME_KEY = [
 board1 = GameBoard.new
 board1_squares = board1.squares
 
-turn_count = 0
-
 
 # Add current move to game
 
 def add_move(player, move, game, key)
     move_key = GameValidator.new.move_converter(move, game, key)
-    puts "converted move is #{move_key}"
+    # puts "converted move is #{move_key}"
     game[move_key[0]][move_key[1]][move_key[2]] = player
 end
 
 # Play a turn
-def play_turn(player_name, token, board1_squares)
-
+def play_turn(player_x, player_o, player_name, token, board1_squares)
+    x_tally = Adjudicator.new.tally_up(board1_squares)[:x_tally]
+    o_tally = Adjudicator.new.tally_up(board1_squares)[:o_tally]
     # Print current game
-    GameOutput.new.print_game(board1_squares)
+    GameOutput.new.print_game(player_x, player_o, board1_squares, x_tally, o_tally)
 
     # Check move is valid and unique
     while true
-        # puts "tallying score"
-        puts Adjudicator.new.tally_up(board1_squares)
         # puts "prompting player"
         GameOutput.new.prompt_move(player_name)
         move = GameInput.new.get_move(token)
-        puts "move is currently #{move}"
+        # puts "move is currently #{move}"
         if GameValidator.new.is_valid(move) && GameValidator.new.is_unique(move, board1_squares, GAME_KEY)
-            puts "move is valid and unique"
+            # puts "move is valid and unique"
             add_move(token, move, board1_squares, GAME_KEY)
-            puts "added move"
-            GameOutput.new.print_game(board1_squares)
+            # puts "added move"
+            GameOutput.new.print_game(player_x, player_o, board1_squares, x_tally, o_tally)
             break
         elsif !GameValidator.new.is_valid(move)
-            puts "move is invalid"
-            GameOutput.new.print_game(board1_squares)
+            # puts "move is invalid"
+            GameOutput.new.print_game(player_x, player_o, board1_squares, x_tally, o_tally)
             puts "\nInvalid Move! Try again.\n"
         elsif !GameValidator.new.is_unique(move, board1_squares, GAME_KEY)
-            puts "stacking move on next board"
+            # puts "stacking move on next board"
             move[0..0]= ((move[0]).to_i + 3).to_s
-            puts "new move is: #{move}"
+            # puts "new move is: #{move}"
             if GameValidator.new.is_valid(move) && GameValidator.new.is_unique(move, board1_squares, GAME_KEY)
-                puts "move is valid and unique"
+                # puts "move is valid and unique"
                 add_move(token, move, board1_squares, GAME_KEY)
-                puts "added move"
-                GameOutput.new.print_game(board1_squares)
+                # puts "added move"
+                GameOutput.new.print_game(player_x, player_o, board1_squares, x_tally, o_tally)
                 break
             elsif !GameValidator.new.is_valid(move)
-                puts "move is invalid"
-                GameOutput.new.print_game(board1_squares)
+                # puts "move is invalid"
+                GameOutput.new.print_game(player_x, player_o, board1_squares, x_tally, o_tally)
                 puts "\nInvalid Move! Try again.\n"
             elsif !GameValidator.new.is_unique(move, board1_squares, GAME_KEY)
-                puts "stacking move on next board"
+                # puts "stacking move on next board"
                 move[0..0]= ((move[0]).to_i + 3).to_s
-                puts "new move is: #{move}"
+                # puts "new move is: #{move}"
                 if GameValidator.new.is_valid(move) && GameValidator.new.is_unique(move, board1_squares, GAME_KEY)
-                    puts "move is valid and unique"
+                    # puts "move is valid and unique"
                     add_move(token, move, board1_squares, GAME_KEY)
-                    puts "added move"
-                    GameOutput.new.print_game(board1_squares)
+                    # puts "added move"
+                    GameOutput.new.print_game(player_x, player_o, board1_squares, x_tally, o_tally)
                     break
                 elsif !GameValidator.new.is_valid(move)
-                    puts "move is invalid"
-                    GameOutput.new.print_game(board1_squares)
+                    # puts "move is invalid"
+                    GameOutput.new.print_game(player_x, player_o, board1_squares, x_tally, o_tally)
                     puts "\nInvalid Move! Try again.\n"
                 elsif !GameValidator.new.is_unique(move, board1_squares, GAME_KEY)
-                    GameOutput.new.print_game(board1_squares)
-                    puts "Stack full! Try again.\n"
+                    GameOutput.new.print_game(player_x, player_o, board1_squares, x_tally, o_tally)
+                    puts "Stack is full! Try again.\n"
                 end
             end
         end
@@ -105,11 +102,29 @@ def play_turn(player_name, token, board1_squares)
 end
 
 # -----MAIN LOOP-----
+puts "Player x, enter name: "
+player_x = gets.strip
+puts "Player o, enter name: "
+player_o = gets.strip
+
+turn_count = -1
 
 while true
     turn_count += 1
-    player_name = TurnMaster.new.whos_turn(turn_count)
-    token = player_name == "Crosses" ? CROSS : NOUGHT
+    player_name = TurnMaster.new.whos_turn(turn_count, player_x, player_o)
+    token = player_name == "#{player_x}" ? CROSS : NOUGHT
 
-    play_turn(player_name, token, board1_squares)
+    play_turn(player_x, player_o, player_name, token, board1_squares)
+    if turn_count >= 26
+        x_final_tally = Adjudicator.new.tally_up(board1_squares)[:x_tally].to_i
+        o_final_tally = Adjudicator.new.tally_up(board1_squares)[:o_tally].to_i
+        if x_final_tally > o_final_tally
+            puts "Game over! #{player_x} wins!"
+        elsif x_final_tally < o_final_tally
+            puts "Game over! #{player_o} wins!"
+        else
+            puts "\nGame over! It's a draw."
+        end
+        break
+    end
 end

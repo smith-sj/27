@@ -3,10 +3,10 @@ class Adjudicator
     attr_reader :tally
 
     def initialize
-        @tally = {x_score: 0, o_score: 0}
+        @tally = {x_tally: 0, o_tally: 0}
     end
 
-    # tally up scores
+    # tally up tallys
     def tally_up(current_game)
 
         combo_key = ["xxx","ooo"]
@@ -82,35 +82,36 @@ class Adjudicator
 
         flats.each do |combo|
             if combo == combo_key[0]
-                @tally[:x_score] += flats_points
+                @tally[:x_tally] += flats_points
             elsif combo == combo_key[1]
-                @tally[:o_score] += flats_points
+                @tally[:o_tally] += flats_points
             end
         end
 
         pillars.each do |combo|
             if combo == combo_key[0]
-                @tally[:x_score] += pillars_points
+                @tally[:x_tally] += pillars_points
             elsif combo == combo_key[1]
-                @tally[:o_score] += pillars_points
+                @tally[:o_tally] += pillars_points
             end
         end
 
         stairs.each do |combo|
             if combo == combo_key[0]
-                @tally[:x_score] += stairs_points
+                @tally[:x_tally] += stairs_points
             elsif combo == combo_key[1]
-                @tally[:o_score] += stairs_points
+                @tally[:o_tally] += stairs_points
             end
         end
 
         diamond_stairs.each do |combo|
             if combo == combo_key[0]
-                @tally[:x_score] += diamond_stairs_points
+                @tally[:x_tally] += diamond_stairs_points
             elsif combo == combo_key[1]
-                @tally[:o_score] += diamond_stairs_points
+                @tally[:o_tally] += diamond_stairs_points
             end
         end
+
 
         return @tally
     end
