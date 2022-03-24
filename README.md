@@ -1,6 +1,6 @@
 # Twent-Sevens        
 
-```To play, imagine a game of Naughts & Crosses in a 3d space.
+To play, imagine a game of Naughts & Crosses in a 3d space.
 The 3d space is represented with 3 game boards, the left most
 board (board 1) representing the bottom plane, and the right
 most board (board 3) representing the top plane. Board 2
