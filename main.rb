@@ -102,6 +102,7 @@ def play_turn(player_x, player_o, player_name, token, board1_squares)
 end
 
 # -----MAIN LOOP-----
+system("cls") || system("clear")
 puts "Player x, enter name: "
 player_x = gets.strip
 puts "Player o, enter name: "
@@ -116,6 +117,9 @@ while true
 
     play_turn(player_x, player_o, player_name, token, board1_squares)
     if turn_count >= 26
+        x_tally = Adjudicator.new.tally_up(board1_squares)[:x_tally]
+        o_tally = Adjudicator.new.tally_up(board1_squares)[:o_tally]
+        GameOutput.new.print_game(player_x, player_o, board1_squares, x_tally, o_tally)
         x_final_tally = Adjudicator.new.tally_up(board1_squares)[:x_tally].to_i
         o_final_tally = Adjudicator.new.tally_up(board1_squares)[:o_tally].to_i
         if x_final_tally > o_final_tally
