@@ -51,9 +51,9 @@ def play_turn(player_name, token, board1_squares)
 
     # Check move is valid and unique
     while true
-        puts "tallying score"
+        # puts "tallying score"
         puts Adjudicator.new.tally_up(board1_squares)
-        puts "prompting player"
+        # puts "prompting player"
         GameOutput.new.prompt_move(player_name)
         move = GameInput.new.get_move(token)
         puts "move is currently #{move}"
