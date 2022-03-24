@@ -71,9 +71,35 @@ def play_turn(player_name, token, board1_squares)
             puts "stacking move on next board"
             move[0..0]= ((move[0]).to_i + 3).to_s
             puts "new move is: #{move}"
-            add_move(token, move, board1_squares, GAME_KEY)
-            GameOutput.new.print_game(board1_squares)
-            break
+            if GameValidator.new.is_valid(move) && GameValidator.new.is_unique(move, board1_squares, GAME_KEY)
+                puts "move is valid and unique"
+                add_move(token, move, board1_squares, GAME_KEY)
+                puts "added move"
+                GameOutput.new.print_game(board1_squares)
+                break
+            elsif !GameValidator.new.is_valid(move)
+                puts "move is invalid"
+                GameOutput.new.print_game(board1_squares)
+                puts "\nInvalid Move! Try again.\n"
+            elsif !GameValidator.new.is_unique(move, board1_squares, GAME_KEY)
+                puts "stacking move on next board"
+                move[0..0]= ((move[0]).to_i + 3).to_s
+                puts "new move is: #{move}"
+                if GameValidator.new.is_valid(move) && GameValidator.new.is_unique(move, board1_squares, GAME_KEY)
+                    puts "move is valid and unique"
+                    add_move(token, move, board1_squares, GAME_KEY)
+                    puts "added move"
+                    GameOutput.new.print_game(board1_squares)
+                    break
+                elsif !GameValidator.new.is_valid(move)
+                    puts "move is invalid"
+                    GameOutput.new.print_game(board1_squares)
+                    puts "\nInvalid Move! Try again.\n"
+                elsif !GameValidator.new.is_unique(move, board1_squares, GAME_KEY)
+                    GameOutput.new.print_game(board1_squares)
+                    puts "Stack full! Try again.\n"
+                end
+            end
         end
     end
 end
