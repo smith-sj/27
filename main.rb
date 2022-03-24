@@ -1,10 +1,10 @@
 # -----CONSTANTS-----
 require_relative "game_output"
 require_relative "game_validator"
-require_relative "adjudicator"
 require_relative "game_input"
 require_relative "turn_master"
 require_relative "game_board"
+require_relative "adjudicator"
 
 # Players
 CROSS = "x"
@@ -43,13 +43,15 @@ def add_move(player, move, game, key)
 end
 
 # Play a turn
-def play_turn(player_name, token, board1_squares)    
+def play_turn(player_name, token, board1_squares)
 
     # Print current game
     GameOutput.new.print_game(board1_squares)
 
     # Check move is valid and unique
     while true
+        puts Adjudicator.new.tally_up(board1_squares)
+
         GameOutput.new.prompt_move(player_name)
         move = GameInput.new.get_move(token)
 
@@ -70,19 +72,9 @@ end
 # -----MAIN LOOP-----
 
 while true
-
     turn_count += 1
     player_name = TurnMaster.new.whos_turn(turn_count)
     token = player_name == "Crosses" ? CROSS : NOUGHT
 
-    if TurnMaster.new.is_draw(turn_count)
-        puts "It's a draw"
-        return false
-    end
-
     play_turn(player_name, token, board1_squares)
-    
-    if Adjudicator.new.is_winner(board1_squares, player_name)
-        return false
-    end
 end
