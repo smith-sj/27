@@ -3,7 +3,7 @@
 ## About
 
 Twenty-seven was created with the goal of making a fun and challenging game that could be played on ink & paper,
-but also played online as a simple free game. It's quite similar to other 3D variations of Naughts & Crosses, with
+but also online, as a simple free game. It's quite similar to other 3D variations of Naughts & Crosses, with
 the unique characteristic of being points-based, making for longer and more complex gameplay.
 
 ## How to play
@@ -34,7 +34,7 @@ board 1
 | | | |
 | | | |
 ```
-Players take turns placing their respective tokens on the board, attempting to make combinations of 3, both on a single plane and across 
+Players take turns placing their respective tokens on the board, attempting to make combinations of 3; both, on a single plane, and across 
 multiple planes. Players may only place tokens on higher planes if the same square is occupied on the lower plane.
 (Imagine the tokens are being stacked.)
 
