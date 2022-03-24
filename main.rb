@@ -14,9 +14,19 @@ NOUGHT = "o"
 
 # A labeled game board for referencing
 GAME_KEY = [
-    ["1a","1b","1c"],
+
+    [["1a","1b","1c"],
     ["2a","2b","2c"],
-    ["3a","3b","3c"]]
+    ["3a","3b","3c"]],
+
+    [["4a","4b","4c"],
+    ["5a","5b","5c"],
+    ["6a","6b","6c"]],
+
+    [["7a","7b","7c"],
+    ["8a","8b","8c"],
+    ["9a","9b","9c"]],
+]
 
 # The current game that is being played
 board1 = GameBoard.new
@@ -29,7 +39,7 @@ turn_count = 0
 
 def add_move(player, move, game, key)
     move_key = GameValidator.new.move_converter(move, game, key)
-    game[move_key[0]][move_key[1]] = player
+    game[move_key[0]][move_key[1]][move_key[2]] = player
 end
 
 # Play a turn

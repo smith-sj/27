@@ -15,13 +15,13 @@ class GameValidator
 
     def move_converter(move, game, key)
         # make an array that we can edit, and return as a reference to where the move will go
-        move_id = [0,0]
-        key.each_with_index do |list,index|
+        move_id = [0,0,0]
+        key[0].each_with_index do |list,index|
             if list.include? move
-                move_id[0] = index
-                key[index].each_with_index do |child,index|
+                move_id[1] = index
+                key[0][index].each_with_index do |child,index|
                     if child == move
-                        move_id[1] = index
+                        move_id[2] = index
                     end
                 end
             end 
@@ -33,7 +33,7 @@ class GameValidator
 
     def is_unique(move, game, key)
         move_key = move_converter(move, game, key)
-        if game[move_key[0]][move_key[1]] == " "
+        if game[move_key[0]][move_key[1]][move_key[2]] == " "
             return true
         else
             return false
