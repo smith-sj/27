@@ -188,9 +188,19 @@ bottom plane to the top. This is called "diamond stairs" and is awarded 1 point.
 This is an illegal move. Notice that the x's are not stacked on anything.
 
 ```
-| | | |    | | | |    | | | |
-| | | |    | | | |    | | | |
-|x| | |    | |x| |    | | |x|
+| | | |
+| | | |
+|x| | |
+
+
+| | | |
+| | | |
+| |x| |
+
+
+| | | |
+| | | |
+| | |x| = 1 point
   
    __ _ _
   /_/_/_/\
