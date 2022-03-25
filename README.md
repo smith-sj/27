@@ -181,7 +181,7 @@ This is an illegal move. Notice that the x's are not stacked on anything.
 /_/_/_/\/\/\
 \x\_\_\/\/\/
    \x\_\/\/
- !     \x\/
+ !    \x\/
 
 ```
 
