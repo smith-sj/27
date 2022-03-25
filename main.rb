@@ -15,7 +15,11 @@ GameOutput.new.start_screen()
 game_mode =  gets.strip
 system("cls") || system("clear")
 
+# Choose Game Mode Loop
+
 while true
+    
+    # Player vs Player
 
     if game_mode == "1"
         game_board = GameBoard.new
@@ -27,6 +31,7 @@ while true
         game_mode =  gets.strip
         system("cls") || system("clear")
 
+    # Player vs AI
 
     elsif game_mode == "2"
         game_board = GameBoard.new
@@ -38,6 +43,7 @@ while true
         game_mode =  gets.strip
         system("cls") || system("clear")
         
+    # AI vs AI
 
     elsif game_mode == "3"
         game_board = GameBoard.new
@@ -48,6 +54,8 @@ while true
         GameOutput.new.start_screen()
         game_mode =  gets.strip
         system("cls") || system("clear")
+    
+    # 
 
     else
         GameOutput.new.start_screen()
