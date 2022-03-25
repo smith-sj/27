@@ -94,6 +94,7 @@ a "pillar" and is awarded 2 points.
 | | | |
 | | | |
 | | |x| = 2 points
+
    __ _ _
   /_/_/_/\
  /_/_/_/\/\
@@ -170,15 +171,17 @@ and is awarded 1 point.
 This is an illegal move. Notice that the x's are not stacked on anything.
 
 ```
+| | | |    | | | |    | | | |
+| | | |    | | | |    | | | |
 |x| | |    | |x| |    | | |x|
-| | | |    | | | |    | | | |
-| | | |    | | | |    | | | |
-
-   __ 
-  /_/\ _ 
-  \x\/_/\ _
-     \x\/_/\
-         \x\/
+  
+   __ _ _
+  /_/_/_/\
+ /_/_/_/\/\
+/_/_/_/\/\/\
+\x\_\_\/\/\/
+ \!\x\_\/\/
+  \!\!\x\/
 
 ```
 
