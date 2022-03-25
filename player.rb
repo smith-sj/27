@@ -1,11 +1,8 @@
 require_relative "game_output"
 require_relative "game_validator"
 require_relative "game_input"
-require_relative "turn_master"
 require_relative "game_board"
 require_relative "adjudicator"
-require_relative "ai"
-require_relative "player"
 
 
 class Player

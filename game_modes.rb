@@ -1,5 +1,4 @@
 require_relative "game_output"
-require_relative "game_board"
 require_relative "adjudicator"
 require_relative "turn_master"
 
