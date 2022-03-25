@@ -168,6 +168,9 @@ and is awarded 1 point.
 
 ```
 
+### ILLEGAL MOVES
+
+
 This is an illegal move. Notice that the x's are not stacked on anything.
 
 ```
@@ -184,6 +187,9 @@ This is an illegal move. Notice that the x's are not stacked on anything.
  !    \x\/
 
 ```
+
+
+### KEEPING TALLY
 
 When playing on pen and paper, it's best practice to tally your own score
 as you go. 
