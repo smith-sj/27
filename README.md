@@ -177,9 +177,9 @@ This is an illegal move. Notice that the x's are not stacked on anything.
    __ 
   /_/\ _ 
   \x\/_/\ _
-      \x\/_/\
-          \x\/
- 
+     \x\/_/\
+         \x\/
+
 ```
 
 When playing on pen and paper, it's best practice to tally your own score
