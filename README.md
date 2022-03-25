@@ -2,7 +2,7 @@
 
 ## About
 
-Twenty-seven was created with the goal of making a fun and challenging game that could be played on ink & paper,
+Twenty-seven was created with the goal of making a fun and challenging game that could be played on pen and paper,
 but also online, as a simple free game. It's quite similar to other 3D variations of Naughts & Crosses, with
 the unique characteristic of being points-based, making for longer and more complex gameplay.
 
