@@ -27,25 +27,26 @@ class GameValidator
     end
 
     #converts move from "1a" to [0,0] etc.
-
     def move_converter(move)
-        # make an array that we can edit, and return as a reference to where the move will go
+        # once converted the move_id will represent [board,row,column]
         move_id = [0,0,0]
-        # puts "starting move conversion"
-
+        # cycle through the Game Key boards...
         GAME_KEY.each_with_index do |board,index|
-            # puts "checking board #{key[index]} for #{move}"
+            # if the current board being searched includes the move...
             if GAME_KEY[index].join.include? "#{move}"
-                # puts "found #{move}!"
-                # puts "move key_ID board is #{index}"
+                # ...then the first value of move_id [board] is the current iteration 
                 move_id[0] = index
+                # cycle through the rows in that board...
                 GAME_KEY[index].each_with_index do |row,index2|
+                    # if the current row includes the move...
                     if row.include? move
-                        # puts "move key_ID row is #{index2}"
+                        # ... the move_id's second value [row] is the current iteration
                         move_id[1] = index2
+                        # cycle through the columns in that row...
                         GAME_KEY[index][index2].each_with_index do |column,index3|
+                            # if the column is equal to the move
                             if column == move
-                                # puts "move key_ID column is #{index3}"
+                                # the move_id's third and final value [column] has been found
                                 move_id[2] = index3
                             end
                         end
@@ -53,7 +54,6 @@ class GameValidator
                 end
             end
         end
-        # puts "converting"
         return move_id
     end
 

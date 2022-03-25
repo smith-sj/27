@@ -48,14 +48,15 @@ class GameOutput
     def start_screen()
         system("cls") || system("clear")
         puts "\n"
-        puts "               ::::::::  :::::::::::  "
-        puts "              :+:    :+: :+:     :+:  "  
-        puts "                   +:+         +:+    "    
-        puts "                +#+          +#+      "      
-        puts "             +#+           +#+        "        
-        puts "           #+#           #+#          "         
-        puts "          ##########     ###          "
-        puts "\n\n1. PvP (press 1 ENTER) || 2. PvAI (press 2 ENTER)\n\n"           
+        puts "                  ::::::::  :::::::::::  "
+        puts "                 :+:    :+: :+:     :+:  "  
+        puts "                      +:+         +:+    "    
+        puts "                   +#+          +#+      "      
+        puts "                +#+           +#+        "        
+        puts "              #+#           #+#          "         
+        puts "             ##########     ###          "
+        puts "\n\n1. P v P (press 1 ENTER) || 2. P v AI (press 2 ENTER)\n\n"
+        puts "                    3. AI v AI                       "           
     end
 
 end
