@@ -1,17 +1,17 @@
-# Twenty-Seven
+# 27
 
 ## About
 
-Twenty-seven was created with the goal of making a fun and challenging game that could be played on pen and paper,
+27 was created with the goal of making a fun and challenging game that could be played on pen and paper,
 but also online, as a simple free game. It's quite similar to other 3D variations of Naughts & Crosses, with
 the unique characteristic of being points-based, making for longer and more complex gameplay.
 
 ## How to play
 
-The aim of Twenty-Seven is to earn points by making combinations of Flats, Pillars and Stairs. When all twenty-seven
-squares are full, the player with the most points is the winner.
+The aim of Twenty-Seven is to earn points by making combinations of Flats, Pillars and Stairs. When all 27 squares
+are full, the player with the most points is the winner.
 
-To play, imagine a game similar to Naughts & Crosses but in a 3D space, represented by three game boards.
+To play, imagine a game similar to Naughts & Crosses but in a 3D space, represented by 3 game boards.
 The top-most board, Board 3, represents the highest plane; and the bottom-most board, Board 1, represents the lowest plane.
 Board 2 represents the middle plane.
 
