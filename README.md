@@ -7,9 +7,7 @@
            #+#           #+#          
           ##########     ###          
 
-
-1. PvP (press 1 ENTER) || 2. PvAI (press 2 ENTER)
-
+Terminal App // Pen & Paper Strategy Game
 
 ```
 
