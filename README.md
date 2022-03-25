@@ -74,6 +74,7 @@ a "pillar" and is awarded 2 points.
 | | | |     | | | |    | | | |
 | | | |     | | | |    | | | |
 | | |x|     | | |x|    | | |x| = 2 points
+
    __ _ _
   /_/_/_/\
  /_/_/_/\/\
@@ -92,7 +93,8 @@ this is called "stairs" and is awarded 2 points.
 ```
 | | | |     | | | |    | | | |
 | | | |     | | | |    | | | |
-|x| | |     |o|x| |    |o|o|x| = 2 points             
+|x| | |     |o|x| |    |o|o|x| = 2 points        
+     
    __ _ _
   /_/_/_/\
  /_/_/_/\/\
@@ -113,6 +115,7 @@ and is awarded 1 point.
 |o| | |     |o| | |    |x| | |
 | |o| |     | |x| |    | | | |
 | | |x|     | | | |    | | | | = 1 point
+
    __ 
   /x/\ _ _
   \_\/_/_/\
