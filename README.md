@@ -51,9 +51,19 @@ a "flat" and is awarded 3 points.
 (diagonal combos across a single plane are also considered flats)
 
 ```
-| | | |     | | | |    | | | |
-| | | |     | | | |    | | | |
-|o|o|o|     | | | |    | | | | = 3 points
+| | | |
+| | | |
+| | | |
+
+
+| | | |
+| | | |
+| | | |
+
+
+| | | |
+| | | |
+|o|o|o| = 3 points
 
    __ _ _
   /_/_/_/\
@@ -71,10 +81,19 @@ a "flat" and is awarded 3 points.
 a "pillar" and is awarded 2 points.
 
 ```
-| | | |     | | | |    | | | |
-| | | |     | | | |    | | | |
-| | |x|     | | |x|    | | |x| = 2 points
+| | | |
+| | | |
+| | |x|
 
+
+| | | |
+| | | |
+| | |x|
+
+
+| | | |
+| | | |
+| | |x| = 2 points
    __ _ _
   /_/_/_/\
  /_/_/_/\/\
@@ -90,10 +109,21 @@ a "pillar" and is awarded 2 points.
 3 x's are stacked from right to left and bottom to top; 
 this is called "stairs" and is awarded 2 points. 
 
+
 ```
-| | | |     | | | |    | | | |
-| | | |     | | | |    | | | |
-|x| | |     |o|x| |    |o|o|x| = 2 points        
+| | | |
+| | | |
+|x| | |
+
+
+| | | |
+| | | |
+|o|x| |
+
+
+| | | |
+| | | |
+|o|o|x| = 2 points       
      
    __ _ _
   /_/_/_/\
@@ -111,10 +141,21 @@ this is called "stairs" and is awarded 2 points.
 and from bottom to top. This is called "diamond stairs"
 and is awarded 1 point.
 
- ```
-|o| | |     |o| | |    |x| | |
-| |o| |     | |x| |    | | | |
-| | |x|     | | | |    | | | | = 1 point
+
+```
+|x| | |
+| | | |
+| | | |
+
+
+|o| | |
+| |x| |
+| | | |
+
+
+|o| | |
+| |o| |
+| | |x| = 1 point
 
    __ 
   /x/\ _ _
@@ -132,6 +173,13 @@ This is an illegal move. Notice that the x's are not stacked on anything.
 |x| | |    | |x| |    | | |x|
 | | | |    | | | |    | | | |
 | | | |    | | | |    | | | |
+
+   __ 
+  /_/\ _ 
+  \x\/_/\ _
+      \x\/_/\
+          \x\/
+ 
 ```
 
 When playing on pen and paper, it's best practice to tally your own score
