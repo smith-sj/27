@@ -45,10 +45,9 @@ and the game continues until every square has been filled or one of the players 
 
 ### FLATS
 
-3 o's are placed in a flat row; this is called
+#### Example:
+3 tokens are placed in a flat row, straight or diagonal, across the board; this is called
 a "flat" and is awarded 3 points.
-
-(diagonal combos across a single plane are also considered flats)
 
 ```
 | | | |
@@ -77,8 +76,9 @@ a "flat" and is awarded 3 points.
 
 ### PILLARS
 
-3 x's are stacked on top of each other; this is called 
-a "pillar" and is awarded 2 points.
+#### Example:
+3 tokens are stacked on top of each other; this is called a "pillar" and is 
+awarded 2 points.
 
 ```
 | | | |
@@ -107,8 +107,9 @@ a "pillar" and is awarded 2 points.
 
 ### STAIRS
 
-3 x's are stacked from right to left and bottom to top; 
-this is called "stairs" and is awarded 2 points. 
+#### Example:
+3 tokens are stacked from one side of the board to the opposite, and from 
+the bottom plane to the top; this is called "stairs" and is awarded 2 points. 
 
 
 ```
@@ -138,9 +139,8 @@ this is called "stairs" and is awarded 2 points.
 
 ### DIAMOND STAIRS
 
-3 o's are stacked diagonally from one corner to the opposite
-and from bottom to top. This is called "diamond stairs"
-and is awarded 1 point.
+3 tokens are stacked diagonally from one corner to the opposite, and from the 
+bottom plane to the top. This is called "diamond stairs" and is awarded 1 point.
 
 
 ```
