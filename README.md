@@ -168,7 +168,7 @@ bottom plane to the top. This is called "diamond stairs" and is awarded 1 point.
 
 ```
 
-### ILLEGAL MOVES
+## ILLEGAL MOVES
 
 
 This is an illegal move. Notice that the x's are not stacked on anything.
@@ -189,7 +189,7 @@ This is an illegal move. Notice that the x's are not stacked on anything.
 ```
 
 
-### KEEPING TALLY
+## KEEPING TALLY
 
 When playing on pen and paper, it's best practice to tally your own score
 as you go. 
