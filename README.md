@@ -43,7 +43,7 @@ and the game continues until every square has been filled or one of the players 
 
 ## Combinations & Points
 
-### FLATS
+### Flats
 
 #### Example:
 3 tokens are placed in a flat row, straight or diagonal, across the board; this is called
@@ -74,7 +74,7 @@ a "flat" and is awarded 3 points.
 
 ```
 
-### PILLARS
+### Pillars
 
 #### Example:
 3 tokens are stacked on top of each other; this is called a "pillar" and is 
@@ -105,7 +105,7 @@ awarded 2 points.
 
 ```
 
-### STAIRS
+### Stairs
 
 #### Example:
 3 tokens are stacked from one side of the board to the opposite, and from 
@@ -137,7 +137,7 @@ the bottom plane to the top; this is called "stairs" and is awarded 2 points.
 
 ```
 
-### DIAMOND STAIRS
+### Diamond Stairs
 
 3 tokens are stacked diagonally from one corner to the opposite, and from the 
 bottom plane to the top. This is called "diamond stairs" and is awarded 1 point.
