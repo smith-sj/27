@@ -9,13 +9,6 @@ require_relative "player"
 require_relative "game_modes"
 
 
-# -----VARIABLES-----
-
-# The current game that is being played
-game_board = GameBoard.new
-game_squares = game_board.squares
-
-
 # -----MAIN LOOP-----
 
 GameOutput.new.start_screen()
@@ -25,6 +18,8 @@ system("cls") || system("clear")
 while true
 
     if game_mode == "1"
+        game_board = GameBoard.new
+        game_squares = game_board.squares
         GameMode.new.p_v_p(game_squares)
         puts "Press ENTER to continue"
         gets
@@ -34,6 +29,8 @@ while true
 
 
     elsif game_mode == "2"
+        game_board = GameBoard.new
+        game_squares = game_board.squares
         GameMode.new.p_v_ai(game_squares)
         puts "Press ENTER to continue"
         gets
@@ -43,6 +40,8 @@ while true
         
 
     elsif game_mode == "3"
+        game_board = GameBoard.new
+        game_squares = game_board.squares
         GameMode.new.ai_v_ai(game_squares)
         puts "Press ENTER to continue"
         gets
@@ -52,7 +51,7 @@ while true
 
     else
         GameOutput.new.start_screen()
-        puts "Invalid choice, please type '1', '2' or '3' and press ENTER"
+        puts "\nPlease type '1', '2' or '3' and press ENTER"
         game_mode =  gets.strip
         system("cls") || system("clear")
     end
