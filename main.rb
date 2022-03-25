@@ -164,8 +164,7 @@ end
 
 # -----MAIN LOOP-----
 
-system("cls") || system("clear")
-puts "1. PvP (press 1 ENTER) || 2. PvAI (press 2 ENTER)\n\n"
+GameOutput.new.start_screen()
 game_mode =  gets.strip
 system("cls") || system("clear")
 

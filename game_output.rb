@@ -52,6 +52,19 @@ class GameOutput
     def print_error (error)
     end
 
+    def start_screen()
+        system("cls") || system("clear")
+        puts "\n"
+        puts "               ::::::::  :::::::::::  "
+        puts "              :+:    :+: :+:     :+:  "  
+        puts "                   +:+         +:+    "    
+        puts "                +#+          +#+      "      
+        puts "             +#+           +#+        "        
+        puts "           #+#           #+#          "         
+        puts "          ##########     ###          "
+        puts "\n\n1. PvP (press 1 ENTER) || 2. PvAI (press 2 ENTER)\n\n"           
+    end
+
 end
 
 
