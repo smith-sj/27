@@ -48,6 +48,8 @@ and the game continues until every square has been filled or one of the players 
 3 o's are placed in a flat row; this is called
 a "flat" and is awarded 3 points.
 
+(diagonal combos across a single plane are also considered flats)
+
 ```
 | | | |     | | | |    | | | |
 | | | |     | | | |    | | | |
@@ -84,7 +86,7 @@ a "pillar" and is awarded 2 points.
 
 ### STAIRS
 
-3 x's are stacked from left to right and bottom to top; 
+3 x's are stacked from right to left and bottom to top; 
 this is called "stairs" and is awarded 2 points. 
 
 ```
