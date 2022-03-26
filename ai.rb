@@ -4,7 +4,7 @@ require_relative "adjudicator"
 class Ai
 
     def name
-        names = ['Bob', 'Jenny', 'HorseyChick93', 'SpicyKing22', 'Albert', 'ThePun!sh3r', 'Kyle', 'PJ', 'David', 'Samantha']
+        names = ['Bob', 'Jenny', 'HorseyChick93', 'SpicyKing22', 'Albert', 'ThePun!sh3r', 'Kyle', 'PJ', 'David', 'Samantha', 'Charlie', 'Keegan', 'TheGodfather', 'Janice']
         return names[rand(names.length)]
     end
     
@@ -31,98 +31,44 @@ class Ai
         # Print current game
 
         GameOutput.new.print_game(player_x, player_o, game_squares, x_tally, o_tally)
-
         puts "\nWaiting for #{player_name}..."
 
+        # Delays AI's turn to look like it's thinking
         sleep rand(3..6)
 
         # Check move is valid and unique
-
         while true
-
+            # get AI move
             move = Ai.new.get_move
-
-            # puts "move is currently #{move}"
-
+            # if the move is valid and unique, add to game
             if GameValidator.new.is_valid(move) && GameValidator.new.is_unique(move, game_squares)
-
-                # puts "move is valid and unique"
-
                 add_move(token, move, game_squares)
-
-                # puts "added move"
-
                 GameOutput.new.print_game(player_x, player_o, game_squares, x_tally, o_tally)
-
                 break
-
+            # if the move is not valid, restart loop
             elsif !GameValidator.new.is_valid(move)
-
-                # puts "move is invalid"
-
                 GameOutput.new.print_game(player_x, player_o, game_squares, x_tally, o_tally)
-
                 puts "\nInvalid Move! Try again.\n"
-
+            # if the move is not unique, check on next board
             elsif !GameValidator.new.is_unique(move, game_squares)
-
-                # puts "stacking move on next board"
-
+                # adds 3 to row (2a -> 5a) same spot on next board
                 move[0..0]= ((move[0]).to_i + 3).to_s
-
-                # puts "new move is: #{move}"
-
-                if GameValidator.new.is_valid(move) && GameValidator.new.is_unique(move, game_squares)
-
-                    # puts "move is valid and unique"
-
+                # if the new move is unique add it to second board
+                if GameValidator.new.is_unique(move, game_squares)
                     add_move(token, move, game_squares)
-
-                    # puts "added move"
                     GameOutput.new.print_game(player_x, player_o, game_squares, x_tally, o_tally)
-
                     break
-
-                elsif !GameValidator.new.is_valid(move)
-
-                    # puts "move is invalid"
-
-                    GameOutput.new.print_game(player_x, player_o, game_squares, x_tally, o_tally)
-
-                    puts "\nInvalid Move! Try again.\n"
-
+                # if the move is not unique, check on final board
                 elsif !GameValidator.new.is_unique(move, game_squares)
-
-                    # puts "stacking move on next board"
-
                     move[0..0]= ((move[0]).to_i + 3).to_s
-
-                    # puts "new move is: #{move}"
-
-                    if GameValidator.new.is_valid(move) && GameValidator.new.is_unique(move, game_squares)
-                        
-                        # puts "move is valid and unique"
-
+                    # if move is unique add it to last board
+                    if GameValidator.new.is_unique(move, game_squares)
                         add_move(token, move, game_squares)
-
-                        # puts "added move"
-
                         GameOutput.new.print_game(player_x, player_o, game_squares, x_tally, o_tally)
-
                         break
-
-                    elsif !GameValidator.new.is_valid(move)
-
-                        # puts "move is invalid"
-
-                        GameOutput.new.print_game(player_x, player_o, game_squares, x_tally, o_tally)
-
-                        puts "\nInvalid Move! Try again.\n"
-
+                    # if move is not unique, then stack is full. restart turn loop
                     elsif !GameValidator.new.is_unique(move, game_squares)
-
                         GameOutput.new.print_game(player_x, player_o, game_squares, x_tally, o_tally)
-
                         puts "\nStack is full! Try again.\n"
                     end
                 end

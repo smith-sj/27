@@ -18,7 +18,6 @@ class GameValidator
     ]
 
     # Checks if the move is included in valid moves
-
     def is_valid(move)
         if !VALID_MOVES.include? move
           return false
@@ -58,10 +57,8 @@ class GameValidator
     end
 
     # Checks if move has already been played
-
     def is_unique(move, game)
         move_key = move_converter(move)
-        # puts "current move key is #{move_key}"
         if game[move_key[0]][move_key[1]][move_key[2]] == " "
             return true
         else

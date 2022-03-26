@@ -54,8 +54,6 @@ while true
         GameOutput.new.start_screen()
         game_mode =  gets.strip
         system("cls") || system("clear")
-    
-    # 
 
     else
         GameOutput.new.start_screen()

@@ -4,6 +4,8 @@ require_relative "turn_master"
 
 class GameMode
 
+    #----- PvP MODE -----
+
     def p_v_p(game_squares)
         puts "Player x, enter name: \n\n"
         player_x_name = gets.strip
@@ -37,6 +39,8 @@ class GameMode
             end
         end    
     end
+
+    #----- PvAI MODE -----
 
     def p_v_ai(game_squares)
         puts "Player x, enter name: \n\n"
@@ -86,6 +90,8 @@ class GameMode
             end
         end
     end
+
+    #----- AIvAI -----
 
     def ai_v_ai(game_squares)
         player_x_name = Ai.new.name
