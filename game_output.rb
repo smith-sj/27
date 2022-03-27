@@ -15,7 +15,6 @@ class GameOutput
             ["|",to_print[0][0][0],"|",to_print[0][0][1],"|",to_print[0][0][2],"|"], 
             ["|",to_print[0][1][0],"|",to_print[0][1][1],"|",to_print[0][1][2],"|"], 
             ["|",to_print[0][2][0],"|",to_print[0][2][1],"|",to_print[0][2][2],"|"]
-        
         ]
     
         puts "    a b c\n\n"
@@ -53,8 +52,11 @@ class GameOutput
         puts "                +#+           +#+        "        
         puts "              #+#           #+#          "         
         puts "             ##########     ###          "
-        puts "\n\n1. P v P (press 1 ENTER) || 2. P v AI (press 2 ENTER)\n\n"
-        puts "                    3. AI v AI                       "           
+        puts "\n\n1. Player v Player
+                \n2. Player v AI
+                \n3. AI v AI
+                \n4. How To Play"
+        puts "\n\nType 1,2,3 or 4 > press ENTER"
     end
 
 end

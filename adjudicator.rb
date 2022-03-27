@@ -82,7 +82,6 @@ class Adjudicator
         # a combo has been made.
         combo_key = ["xxx","ooo"]
         
-        
         # Cycle through potential combos and adjust scores as necessary
         flats.each do |combo|
             if combo == combo_key[0]
@@ -115,7 +114,6 @@ class Adjudicator
                 @tally[1][:o_tally] += diamond_stairs_points
             end
         end
-
 
         return @tally
     end

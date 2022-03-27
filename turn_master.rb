@@ -1,5 +1,5 @@
 class TurnMaster
-    
+
     attr_accessor :turn_count
 
     def initialize()

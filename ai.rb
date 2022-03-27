@@ -77,5 +77,4 @@ class Ai
             end
         end
     end
-
 end

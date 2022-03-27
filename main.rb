@@ -47,7 +47,16 @@ while true
             puts "Press ENTER to continue"
             gets
             break
-        
+
+        elsif game_mode == "4"
+            file = "./rules.txt"
+            input = File.read(file)      
+            puts input
+            puts "↑ SCROLL TO TOP FOR RULES ↑\n\n"
+            puts "Press ENTER back to menu"
+            gets
+            break
+
         # Invalid option
 
         else
