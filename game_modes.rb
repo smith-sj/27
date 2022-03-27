@@ -23,11 +23,11 @@ class GameMode
         
             Player.new.play_turn(player_x_name, player_o_name, player_name, token, game_squares)
             if turn_count >= 27
-                x_tally = Adjudicator.new.tally_up(game_squares)[0][:x_tally]
-                o_tally = Adjudicator.new.tally_up(game_squares)[1][:o_tally]
+                x_tally = Adjudicator.new.get_x_tally(game_squares)
+                o_tally = Adjudicator.new.get_o_tally(game_squares)
                 GameOutput.new.print_game(player_x_name, player_o_name, game_squares, x_tally, o_tally)
-                x_final_tally = Adjudicator.new.tally_up(game_squares)[0][:x_tally].to_i
-                o_final_tally = Adjudicator.new.tally_up(game_squares)[1][:o_tally].to_i
+                x_final_tally = Adjudicator.new.get_x_tally(game_squares).to_i
+                o_final_tally = Adjudicator.new.get_o_tally(game_squares).to_i
                 if x_final_tally > o_final_tally
                     puts "\nGame over! #{player_x_name} wins!"
                 elsif x_final_tally < o_final_tally
@@ -56,11 +56,11 @@ class GameMode
             if player_name == player_o_name
                 Ai.new.play_ai_turn(player_x_name, player_o_name, player_name, token, game_squares)
                 if turn_count >= 27
-                    x_tally = Adjudicator.new.tally_up(game_squares)[0][:x_tally]
-                    o_tally = Adjudicator.new.tally_up(game_squares)[1][:o_tally]
+                    x_tally = Adjudicator.new.get_x_tally(game_squares)
+                    o_tally = Adjudicator.new.get_o_tally(game_squares)
                     GameOutput.new.print_game(player_x_name, player_o_name, game_squares, x_tally, o_tally)
-                    x_final_tally = Adjudicator.new.tally_up(game_squares)[0][:x_tally].to_i
-                    o_final_tally = Adjudicator.new.tally_up(game_squares)[1][:o_tally].to_i
+                    x_final_tally = Adjudicator.new.get_x_tally(game_squares).to_i
+                    o_final_tally = Adjudicator.new.get_o_tally(game_squares).to_i
                     if x_final_tally > o_final_tally
                         puts "\nGame over! #{player_x_name} wins!"
                     elsif x_final_tally < o_final_tally
@@ -73,11 +73,11 @@ class GameMode
             else
                 Player.new.play_turn(player_x_name, player_o_name, player_name, token, game_squares)
                 if turn_count >= 27
-                    x_tally = Adjudicator.new.tally_up(game_squares)[0][:x_tally]
-                    o_tally = Adjudicator.new.tally_up(game_squares)[1][:o_tally]
+                    x_tally = Adjudicator.new.get_x_tally(game_squares)
+                    o_tally = Adjudicator.new.get_o_tally(game_squares)
                     GameOutput.new.print_game(player_x_name, player_o_name, game_squares, x_tally, o_tally)
-                    x_final_tally = Adjudicator.new.tally_up(game_squares)[0][:x_tally].to_i
-                    o_final_tally = Adjudicator.new.tally_up(game_squares)[1][:o_tally].to_i
+                    x_final_tally = Adjudicator.new.get_x_tally(game_squares).to_i
+                    o_final_tally = Adjudicator.new.get_o_tally(game_squares).to_i
                     if x_final_tally > o_final_tally
                         puts "\nGame over! #{player_x_name} wins!"
                     elsif x_final_tally < o_final_tally
@@ -107,11 +107,11 @@ class GameMode
             if player_name == player_o_name
                 Ai.new.play_ai_turn(player_x_name, player_o_name, player_name, token, game_squares)
                 if turn_count >= 27
-                    x_tally = Adjudicator.new.tally_up(game_squares)[0][:x_tally]
-                    o_tally = Adjudicator.new.tally_up(game_squares)[1][:o_tally]
+                    x_tally = Adjudicator.new.get_x_tally(game_squares)
+                    o_tally = Adjudicator.new.get_o_tally(game_squares)
                     GameOutput.new.print_game(player_x_name, player_o_name, game_squares, x_tally, o_tally)
-                    x_final_tally = Adjudicator.new.tally_up(game_squares)[0][:x_tally].to_i
-                    o_final_tally = Adjudicator.new.tally_up(game_squares)[1][:o_tally].to_i
+                    x_final_tally = Adjudicator.new.get_x_tally(game_squares).to_i
+                    o_final_tally = Adjudicator.new.get_o_tally(game_squares).to_i
                     if x_final_tally > o_final_tally
                         puts "\nGame over! #{player_x_name} wins!"
                     elsif x_final_tally < o_final_tally
@@ -124,11 +124,11 @@ class GameMode
             else
                 Ai.new.play_ai_turn(player_x_name, player_o_name, player_name, token, game_squares)
                 if turn_count >= 27
-                    x_tally = Adjudicator.new.tally_up(game_squares)[0][:x_tally]
-                    o_tally = Adjudicator.new.tally_up(game_squares)[1][:o_tally]
+                    x_tally = Adjudicator.new.get_x_tally(game_squares)
+                    o_tally = Adjudicator.new.get_o_tally(game_squares)
                     GameOutput.new.print_game(player_x_name, player_o_name, game_squares, x_tally, o_tally)
-                    x_final_tally = Adjudicator.new.tally_up(game_squares)[0][:x_tally].to_i
-                    o_final_tally = Adjudicator.new.tally_up(game_squares)[1][:o_tally].to_i
+                    x_final_tally = Adjudicator.new.get_x_tally(game_squares).to_i
+                    o_final_tally = Adjudicator.new.get_o_tally(game_squares).to_i
                     if x_final_tally > o_final_tally
                         puts "\nGame over! #{player_x_name} wins!"
                     elsif x_final_tally < o_final_tally

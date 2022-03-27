@@ -120,4 +120,11 @@ class Adjudicator
         return @tally
     end
 
+    def get_x_tally(game_squares)
+        return tally_up(game_squares)[0][:x_tally]
+    end
+    def get_o_tally(game_squares)
+        return tally_up(game_squares)[1][:o_tally]
+    end
+
 end

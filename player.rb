@@ -16,8 +16,8 @@ class Player
     # Play a turn
     def play_turn(player_x, player_o, player_name, token, game_squares)
         # set current score set as variable
-        x_tally = Adjudicator.new.tally_up(game_squares)[0][:x_tally]
-        o_tally = Adjudicator.new.tally_up(game_squares)[1][:o_tally]
+        x_tally = Adjudicator.new.get_x_tally(game_squares)
+        o_tally = Adjudicator.new.get_o_tally(game_squares)
         # Print current game board
         GameOutput.new.print_game(player_x, player_o, game_squares, x_tally, o_tally)
 
