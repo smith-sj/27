@@ -140,7 +140,6 @@ class GameMode
                     end
                 end
             end    
-        
     end
 
 
