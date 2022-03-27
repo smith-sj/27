@@ -48,9 +48,10 @@ while true
             gets
             break
 
+        # Read Rules
+
         elsif game_mode == "4"
-            file = "./rules.txt"
-            input = File.read(file)      
+            input = File.read("./rules.txt")      
             puts input
             puts "↑ SCROLL TO TOP FOR RULES ↑\n\n"
             puts "Press ENTER back to menu"
