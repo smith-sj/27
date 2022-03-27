@@ -1,20 +1,4 @@
 class,id,name,type,method,initialization_arg_1,method_arg_1,method_arg_2,method_arg_3,expected
-GameValidator,GameValidator-1.1,Checks if a valid move is input,instance,valid_move,,1a,,,true
-GameValidator,GameValidator-2.1,Checks if an invalid move is rejected,instance,valid_move,,1h,,,false
-Adjudicator,Adjudicator-1.1, Crosses player should win,instance,is_winner,,"[['x','x','x'],['','',''],['','','']]",crosses,,true
-Adjudicator,Adjudicator-1.2, Crosses player should win,instance,is_winner,,"[['','',''],['x','x','x'],['','','']]",crosses,,true
-Adjudicator,Adjudicator-1.3, Crosses player should win,instance,is_winner,,"[['','',''],['','',''],['x','x','x']]",crosses,,true
-Adjudicator,Adjudicator-1.4, Crosses player should win,instance,is_winner,,"[['x','',''],['x','',''],['x','','']]",crosses,,true
-Adjudicator,Adjudicator-1.5, Crosses player should win,instance,is_winner,,"[['','x',''],['','x',''],['','x','']]",crosses,,true
-Adjudicator,Adjudicator-1.6, Crosses player should win,instance,is_winner,,"[['','','x'],['','','x'],['','','x']]",crosses,,true
-Adjudicator,Adjudicator-1.7, Crosses player should win,instance,is_winner,,"[['x','',''],['','x',''],['','','x']]",crosses,,true
-Adjudicator,Adjudicator-1.8, Crosses player should win,instance,is_winner,,"[['','','x'],['','x',''],['x','','']]",crosses,,true
-Adjudicator,Adjudicator-1.1, Noughts player should win,instance,is_winner,,"[['o','o','o'],['','',''],['','','']]",noughts,,true
-Adjudicator,Adjudicator-1.2, Noughts player should win,instance,is_winner,,"[['','',''],['o','o','o'],['','','']]",noughts,,true
-Adjudicator,Adjudicator-1.3, Noughts player should win,instance,is_winner,,"[['','',''],['','',''],['o','o','o']]",noughts,,true
-Adjudicator,Adjudicator-1.4, Noughts player should win,instance,is_winner,,"[['o','',''],['o','',''],['o','','']]",noughts,,true
-Adjudicator,Adjudicator-1.5, Noughts player should win,instance,is_winner,,"[['','o',''],['','o',''],['','o','']]",noughts,,true
-Adjudicator,Adjudicator-1.6, Noughts player should win,instance,is_winner,,"[['','','o'],['','','o'],['','','o']]",noughts,,true
-Adjudicator,Adjudicator-1.7, Noughts player should win,instance,is_winner,,"[['o','',''],['','o',''],['','','o']]",noughts,,true
-Adjudicator,Adjudicator-1.8, Noughts player should win,instance,is_winner,,"[['','','o'],['','o',''],['o','','']]",noughts,,true
-Adjudicator,Adjudicator-2.1, No player should win,instance,is_winner,,"[['x','o','x'],['o','x','o'],['o','x','o']]",noughts,,true
+TurnMaster,Turnmaster-1.1,Checks who's turn it is,instance,whos_turn,,1,"Steve","Bob","Steve"
+Adjudicator,Adjudicator-1.1,Tally up scor,instance,tally_up,,"[[[' ',' ',' '],[' ',' ',' '],[' ',' ',' ']],[[' ',' ',' '],[' ',' ',' '],[' ',' ',' ']],[[' ',' ',' '],[' ',' ',' '],[' ',' ',' ']]]",,,"{:x_tally=>0, :o_tally=>0}"
+Adjudicator,Adjudicator-1.2,Tally up score,instance,tally_up,,"[[['x','o','x'],['x','x','o'],['o','o','x']],[['x','x','x'],['o','o','o'],['o','o','o']],[['x','o','x'],['x','o','x'],['x','o','x']]]",,,"{:x_tally=>20, :o_tally=>15}"

@@ -3,11 +3,13 @@ require_relative "adjudicator"
 
 class Ai
 
+    # returns a random name from list
     def name
         names = ['Bob', 'Jenny', 'HorseyChick93', 'SpicyKing22', 'Albert', 'ThePun!sh3r', 'Kyle', 'PJ', 'David', 'Samantha', 'Charlie', 'Keegan', 'TheGodfather', 'Janice']
         return names[rand(names.length)]
     end
     
+    # returns a random move, i.e. "2c"
     def get_move
         letters = ["a","b","c"]
         random_letter = letters[rand(3)]
@@ -25,8 +27,8 @@ class Ai
 
     def play_ai_turn(player_x, player_o, player_name, token, game_squares)
 
-        x_tally = Adjudicator.new.tally_up(game_squares)[:x_tally]
-        o_tally = Adjudicator.new.tally_up(game_squares)[:o_tally]
+        x_tally = Adjudicator.new.tally_up(game_squares)[0][:x_tally]
+        o_tally = Adjudicator.new.tally_up(game_squares)[1][:o_tally]
 
         # Print current game
 

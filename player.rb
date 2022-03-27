@@ -8,16 +8,16 @@ require_relative "adjudicator"
 class Player
 
     # Add current move to game
-    def add_move(player, move, game)
+    def add_move(token, move, game)
         move_key = GameValidator.new.move_converter(move)
-        game[move_key[0]][move_key[1]][move_key[2]] = player
+        game[move_key[0]][move_key[1]][move_key[2]] = token
     end
 
     # Play a turn
     def play_turn(player_x, player_o, player_name, token, game_squares)
         # set current score set as variable
-        x_tally = Adjudicator.new.tally_up(game_squares)[:x_tally]
-        o_tally = Adjudicator.new.tally_up(game_squares)[:o_tally]
+        x_tally = Adjudicator.new.tally_up(game_squares)[0][:x_tally]
+        o_tally = Adjudicator.new.tally_up(game_squares)[1][:o_tally]
         # Print current game board
         GameOutput.new.print_game(player_x, player_o, game_squares, x_tally, o_tally)
 

@@ -1,6 +1,6 @@
 class GameOutput
 
-
+    #prints the main game screen
     def print_game(player_x, player_o, to_print, x_tally, o_tally)
         system("cls") || system("clear")
         printed_rows = [
@@ -37,14 +37,12 @@ class GameOutput
         puts "#{player_x}(x): #{x_tally}  |  #{player_o}(o): #{o_tally}"
     end
 
-    # Prompts
-
+    # Prompts the player for move
     def prompt_move (player)
         puts "\n#{player}, where would you like to go?\n"
     end
 
-    # Start Screen
-
+    # Prints Start Screen
     def start_screen()
         system("cls") || system("clear")
         puts "\n"
