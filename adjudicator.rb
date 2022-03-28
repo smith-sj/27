@@ -14,7 +14,7 @@ class Adjudicator
         stairs_points = 2
         diamond_stairs_points = 1
 
-        # Groups of 3 squares on boards where flat combos that can be made
+        # Groups of 3 squares on all boards (where flat combos can be made)
         flats = [
             # board 1
             (current_game[0][0][0] + current_game[0][0][1] + current_game[0][0][2]),
@@ -44,7 +44,7 @@ class Adjudicator
             (current_game[2][0][0] + current_game[2][1][1] + current_game[2][2][2]),
             (current_game[2][0][2] + current_game[2][1][1] + current_game[2][2][0]),]
 
-        # Groups of 3 squares on boards where pillar combos that can be made
+        # Same for pillars combos
         pillars = [
             (current_game[0][0][0] + current_game[1][0][0] + current_game[2][0][0]),
             (current_game[0][0][1] + current_game[1][0][1] + current_game[2][0][1]),
@@ -55,8 +55,8 @@ class Adjudicator
             (current_game[0][2][0] + current_game[1][2][0] + current_game[2][2][0]),
             (current_game[0][2][1] + current_game[1][2][1] + current_game[2][2][1]),
             (current_game[0][2][2] + current_game[1][2][2] + current_game[2][2][2]),]
-        
-        # Groups of 3 squares on boards where pillar combos that can be made
+
+        # Same for stairs combos
         stairs = [
             (current_game[0][0][0] + current_game[1][0][1] + current_game[2][0][2]),
             (current_game[0][1][0] + current_game[1][1][1] + current_game[2][1][2]),
@@ -71,7 +71,7 @@ class Adjudicator
             (current_game[0][0][1] + current_game[1][1][1] + current_game[2][2][1]),
             (current_game[0][0][0] + current_game[1][1][0] + current_game[2][2][0]),]
             
-        # Groups of 3 squares on boards where diamonds combos that can be made
+        # Same again for diamond stairs combos
         diamond_stairs = [
             (current_game[0][0][0] + current_game[1][1][1] + current_game[2][2][2]),
             (current_game[0][2][0] + current_game[1][1][1] + current_game[2][0][2]),
